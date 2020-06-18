@@ -346,8 +346,72 @@ R(x) = x^n \sum_{j = 0}^{\infty} a_j x^j
 \end{equation}
 donde
 \begin{equation}
- a =\pm \quad a_{2j} = -\frac{1}{4j(j+a)}a_{2j-2}\quad j = 1, 2, 3   
+ \alpha =\pm \quad a_{2j} = -\frac{1}{4j(j+a)}a_{2j-2}\quad j = 1, 2, 3   
 \end{equation}
 
+Es conveniente escoger la constante $a_0$:
+\begin{equation}
+    a_{2j} = \frac{(-1)\Gamma(\alpha + 1) }{2^{2j}j!\Gamma(J + \alpha + 1)}a_0
+\end{equation}
+Entonces las dos soluciones son:
+\begin{equation}
+    J_\nu(x) = \left( \frac{x}{2}\right)^\nu \sum_{j = 0}^{\infty} \frac{(-1)^j}{j! \Gamma (j + \nu + 1)}\left ( \frac{x}{2} \right )^{2j}
+\end{equation}
+\begin{equation}
+    J_{-\nu}(x) = \left( \frac{x}{2}\right)^{-\nu} \sum_{j = 0}^{\infty} \frac{(-1)^j}{j! \Gamma (j - \nu + 1)}\left ( \frac{x}{2} \right )^{2j}
+\end{equation}
+La souciónes son llamadas \funciones de Bessel de PRIMERA CLASE de onrden $\pm \nu$. La serie converge para todos los valores finitos de $x$ si $\nu$ es entero, esas dos soluciones $J_{\pm} \nu(x)$ forman un par de soluciones linealmente independientes de la ecuación de Bessel de segundo orden. Si $\nu$ es entero las soluciones son linealmente dependientes. Si $\nu = m$, un entero, se puede ver de la representación:
+\begin{equation}
+    J_{-m}(x) = (-1)^m J_m(x)
+\end{equation}
+En consecuencia, es necesario encontrar otras soluciones linealmente independientes cuando $\nu$ es entero. Es costumbre remplazar el par $J_{\pm \nu}(x)$ por $J_\nu(x)$ y $N_\nu(x)$ función de Newmann (o función de Bessel de segunda clase)
+
+\begin{equation}
+    N_\nu(x) = \frac{J_\nu(x) \cos \nu\pi - J_{-\nu}(x)}{\sin \nu \pi}
+\end{equation}
+
+Si $\nu$ no es entero, $N_\nu(x)$ es linealmente independiente de $J_\nu(x)$. 
+en el límite en que $\nu \to \engero$, $N_\nu$ es linealmente independiente de $J_\nu(x)$
+
+Esto involucra $log x$. 
+Las funciones de Bessel de Tercera clase, llamadas funciones de Hankel, se definen como combinaciones lineales de $J_\nu(x)$ y $N_\nu(x)$:
+\begin{equation}
+    \begin{gathered}
+    H_\nu(x) = J_\nu(x) + i N_\nu (x)\\
+    H_\nu(x) = J_\nu(x) - i N_\nu (x)
+    \end{gathered}
+\end{equation}
+Las funciones de Hankel forman un conjunto fundamental de soluciones de la ecuación de Bessel justo como $J_\nu(x)$ y $N_\nu(x)$
+
+Las funciones $J_\nu, N_\nu, H_\nu^{(1)}, H_\nu^{(2)}$ todas satisfacen las fórmulas de recurrencia:
+
+\begin{equation}
+    \begin{gathered}
+    \Omega_{\nu-1}(x) + \Omega_{\nu + 1} = \frac{2\nu}{x}\Omega_\nu(x) \\
+    \Omega_{\nu-1}(x)  = \frac{2d\Omega_\nu(x)}{dx}
+    \end{gathered}
+\end{equation}
+donde $\Omega_\nu(x)$ es cualquiera de las funciones cilíndricas de orden $\nu$. Esto se puede ver en la representación (3.82). 
+De la $\nabla^2 \Psi = 0$, de la separación de variables, si se toma la constante de separación $k^2$ en la ecuación (3.73) como $-k^2$ entonces:
+\begin{equation}
+    \frac{d^2 Z(z)}{dz^2} = -k^2 Z(z)
+\end{equation}
+La ecuación de Bessel sería de la forma (ver 3.75)
+
+\begin{equation}
+    \begin{gathered}
+    \frac{\partial^2 R(r)}{\partial r^1} + \frac{1}{r}\frac{\partial R(r)}{\partial r} + \left(-k^2 - \frac{\nu}{r^2} \right )R(r) = 0 \\
+    \frac{\partial^2 R(r)}{\partial r^2} + \frac{1}{r}\frac{\partial R(r)}{\partial r} - \left (k^2 + \frac{\nu^2}{r^2} \right)R(r) = 0 \\
+    \frac{d^2 R(x)}{d x^2} + \frac{1}{x}\frac{d R(x)}{d x} - \left ( 1 + \frac{\nu^2}{x^2} \right)R(x) = 0
+    \end{gathered}
+\end{equation}
+Esta es la función modificada de Bessel. Para la cual sus soluciones son funciones de argumento imaginario. Las soluciones independientes son:
+
+\begin{equation}
+    \begin{gethered}
+    I_\nu(x) = i^{-\nu}J_\nu(ix) \\
+    K_\nu(x) = \frac{\pi}{2}i^{\nu + 1} H_\nu^{(1)}(ix)
+    \end{gathered}
+\end{equation}
 
 \end{document}
